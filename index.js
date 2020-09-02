@@ -8,14 +8,16 @@ function submitData(name, email) = {
     body: JSON.stringify({name: name, email: email})
   };
 
-fetch("http://localhost:3000/users", configObj)
-  .then(function(response) {
-    return response.json();
+return fetch("http://localhost:3000/users", configObj)
+  .then(res => res.json())
+  .then(object => {
+      const h1 = document.createElement('h1')
+      h1.textContent = object.id
+      document.body.appendChild(h1)
   })
-  .then(function(object) {
-    console.log(object);
-  })
-  .catch(function(error) {
-    alert("Bad things! Ragnarők!");
-    console.log(error.message);
+  .catch(error => {
+      const h2 = document.createElement('h2')
+      h2.textContent = error.message
+      document.body.appendChild(h2)
   });
+}
