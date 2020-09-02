@@ -1,1 +1,4 @@
-// Add your code here
+let submitData = {
+  name: name,
+  email: email
+};
