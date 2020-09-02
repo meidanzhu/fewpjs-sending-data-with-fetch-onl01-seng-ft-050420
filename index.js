@@ -1,4 +1,4 @@
-function submitData(name, email) = {
+function submitData(name, email) {
   let configObj = {
     method: "POST",
     headers: {
